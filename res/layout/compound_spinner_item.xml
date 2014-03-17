@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imageView_Logo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/os_logo"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textView_OS"
+        style="?android:attr/spinnerDropDownItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_toRightOf="@+id/imageView_Logo"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:textColor="@android:color/widget_edittext_dark" />
+
+</RelativeLayout>

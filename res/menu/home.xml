@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sampleforms="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/ic_action_info"
+        android:orderInCategory="100"
+        android:title="@string/action_about"
+        sampleforms:showAsAction="ifRoom"/>
+
+</menu>

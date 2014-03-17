@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/image_CompanyLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/LogoDescription"
+        android:maxHeight="80dp"
+        android:padding="6dp"
+        android:src="@drawable/your_logo_here" />
+
+    <ScrollView
+        android:id="@+id/scrollView_Form"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/layout_Buttons"
+        android:layout_below="@+id/image_CompanyLogo" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin" >
+
+            <EditText
+                android:id="@+id/editText_FirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:ems="10"
+                android:hint="@string/FirstName"
+                android:inputType="textPersonName" >
+
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:id="@+id/editText_LastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/editText_FirstName"
+                android:layout_below="@+id/editText_FirstName"
+                android:ems="10"
+                android:hint="@string/LastName"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editText_Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/editText_LastName"
+                android:layout_below="@+id/editText_LastName"
+                android:ems="10"
+                android:hint="@string/Email"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/textView_Twitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/editText_TwitterHandle"
+                android:text="@string/TwitterText"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/editText_TwitterHandle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editText_Email"
+                android:layout_toRightOf="@+id/textView_Twitter"
+                android:ems="10"
+                android:hint="@string/TwitterHandle"
+                android:singleLine="true" />
+
+            <AutoCompleteTextView
+                android:id="@+id/AutoCompleteTextView_City"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView_Twitter"
+                android:layout_below="@+id/editText_TwitterHandle"
+                android:ems="10"
+                android:hint="@string/City"
+                android:inputType="textCapWords"
+                android:singleLine="true"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/textView_Gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/AutoCompleteTextView_City"
+                android:layout_below="@+id/AutoCompleteTextView_City"
+                android:text="@string/GenderText"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_Gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView_Gender"
+                android:layout_below="@+id/textView_Gender"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio_GenderMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/GenderMale" />
+
+                <RadioButton
+                    android:id="@+id/radio_GenderFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/GenderFemale" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView_Smartphone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/radioGroup_Gender"
+                android:layout_below="@+id/radioGroup_Gender"
+                android:text="@string/SmartphoneText"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_Smartphone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView_Smartphone"
+                android:layout_below="@+id/textView_Smartphone"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio_SmartphoneYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/SmaprtphoneYes" />
+
+                <RadioButton
+                    android:id="@+id/radio_SmartphoneNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/SmartphoneNo" />
+            </RadioGroup>
+
+            <Spinner
+                android:id="@+id/spinner_Smartphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/radioGroup_Smartphone"
+                android:layout_below="@+id/radioGroup_Smartphone"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView_Person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/spinner_Smartphone"
+                android:layout_below="@+id/spinner_Smartphone"
+                android:text="@string/PersonText"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_Person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView_Person"
+                android:layout_below="@+id/textView_Person"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio_Student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/PersonStudent" />
+
+                <RadioButton
+                    android:id="@+id/radio_Professional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/PersonProfessional" />
+            </RadioGroup>
+
+            <include
+                android:id="@+id/layout_Student"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/radioGroup_Person"
+                android:layout_below="@+id/radioGroup_Person"
+                layout="@layout/layout_student"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/layout_Professional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/radioGroup_Person"
+                android:layout_below="@+id/radioGroup_Person"
+                layout="@layout/layout_professional"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layout_Buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button_Reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/reset" />
+
+        <Button
+            android:id="@+id/button_Submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/submit" />
+    </LinearLayout>
+
+</RelativeLayout>
